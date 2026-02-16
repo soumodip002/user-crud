@@ -137,10 +137,6 @@ export interface User {
 
 The production build (`dist/`) is ready for static hosting. The API points to a live MockAPI.io endpoint — **no backend server needed**.
 
-**Deploy to Netlify:**
-1. Run `npm run build`
-2. Drag the `dist/` folder to [app.netlify.com/drop](https://app.netlify.com/drop)
-
 **Deploy to Vercel:**
 ```bash
 npx vercel --prod
