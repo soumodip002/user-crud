@@ -1,0 +1,234 @@
+.table-container {
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow:
+        0 8px 32px rgba(31, 38, 135, 0.18),
+        0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+}
+
+.table-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.table-title-icon {
+    color: var(--accent);
+    font-size: 1.15rem;
+}
+
+/* Desktop table */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.user-table thead th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.user-table tbody tr {
+    animation: fadeRow 0.4s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeRow {
+    to {
+        opacity: 1;
+    }
+}
+
+.user-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.user-table tbody td {
+    padding: 0.85rem 1rem;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.2s ease;
+}
+
+.actions-header {
+    text-align: center !important;
+    width: 110px;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(31, 38, 135, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: translateY(-2px);
+}
+
+.edit-btn:hover {
+    color: var(--accent);
+    border-color: rgba(108, 92, 231, 0.4);
+    box-shadow:
+        0 4px 20px var(--accent-glow),
+        0 0 0 1px rgba(108, 92, 231, 0.15) inset;
+    background: rgba(108, 92, 231, 0.1);
+}
+
+.delete-btn:hover {
+    color: var(--danger);
+    border-color: rgba(231, 76, 111, 0.4);
+    box-shadow:
+        0 4px 20px var(--danger-glow),
+        0 0 0 1px rgba(231, 76, 111, 0.15) inset;
+    background: rgba(231, 76, 111, 0.1);
+}
+
+/* Skeleton */
+.table-loading {
+    padding: 0.5rem 0;
+}
+
+.skeleton-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skeleton-cell {
+    height: 18px;
+    flex: 1;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    border-radius: 6px;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-actions {
+    max-width: 80px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: center;
+}
+
+.empty-state h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+}
+
+.empty-state p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+/* Mobile cards */
+.mobile-cards {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        display: none;
+    }
+
+    .mobile-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .user-card {
+        padding: 1rem 1.25rem;
+        animation: fadeRow 0.4s ease forwards;
+        opacity: 0;
+    }
+
+    .card-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+    .card-label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
+        margin-bottom: 2px;
+    }
+
+    .card-value {
+        font-size: 0.9rem;
+        color: var(--text-primary);
+    }
+
+    .card-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        justify-content: flex-end;
+    }
+}

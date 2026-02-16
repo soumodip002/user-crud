@@ -1,0 +1,36 @@
+.confirm-dialog {
+    text-align: center;
+}
+
+.confirm-message {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger), #e05776);
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px var(--danger-glow);
+}
+
+.btn-danger:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--danger-glow);
+}
+
+.btn-danger:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
